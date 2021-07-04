@@ -15,16 +15,15 @@ ll.addLast(e6);
 ll.addLast(e8);
 //ll.addFirst(e8);
 
-
-for (let e of ll.iterateForward()) {
+for (let e of ll.iterateBackward()) {
     console.log(e.value);
     console.log('-------');
 }
 
-console.log(ll.search(e8));
+// console.log(ll.search(e8));
 
-let t = e8 == e8;
-console.log(t);
+// let t = e8 == e8;
+// console.log(t);
 // console.log('------ after delete -------');
 
 // // console.log(ll.deleteFirst().value);
@@ -37,8 +36,8 @@ console.log(t);
 // }
 // console.log('------ -------');
 
-// console.log('-------------');
-// console.log(ll.length());
+console.log('-------------');
+console.log(ll.length());
 
 // console.log('-------------');
 // console.log(ll.tail.value);

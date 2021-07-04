@@ -95,12 +95,12 @@ class LinkedList {
     }
 
     length() {
-        let currentNode = this.head;
-        if (currentNode == null) {
+        if (this.isEmpty()) {
             return 0;
         }
 
         let ln = 1;
+        let currentNode = this.head;
         while (currentNode.hasNext()) {
             currentNode = currentNode.next;
             ln++;
@@ -113,12 +113,17 @@ class LinkedList {
             throw 'list is empty';
         }
 
-        let currentNode = this.head;
-        yield currentNode;
-        while (currentNode.hasNext()) {
-            currentNode = currentNode.next;
+        // let currentNode = this.head;
+        // yield currentNode;
+        // while (currentNode.hasNext()) {
+        //     currentNode = currentNode.next;
+        //     yield currentNode;
+        // }
+        let currentNode = this.head
+        for (; currentNode.hasNext(); currentNode = currentNode.next)
             yield currentNode;
-        }
+
+        yield currentNode;
     }
 
     *iterateBackward() {
@@ -126,12 +131,17 @@ class LinkedList {
             throw 'list is empty';
         }
 
-        let currentNode = this.tail;
-        yield currentNode;
-        while(currentNode.hasPrev()) {
-            currentNode = currentNode.prev;
+        // let currentNode = this.tail;
+        // yield currentNode;
+        // while(currentNode.hasPrev()) {
+        //     currentNode = currentNode.prev;
+        //     yield currentNode;
+        // }
+
+        let currentNode = this.tail
+        for (; currentNode.hasPrev(); currentNode = currentNode.prev)
             yield currentNode;
-        }
+        yield currentNode;
     }
 
     // this search method is suck, complexity = 0(n)
