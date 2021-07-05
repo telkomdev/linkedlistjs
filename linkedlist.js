@@ -144,7 +144,7 @@ class LinkedList {
         yield currentNode;
     }
 
-    // this search method is suck, complexity = 0(n)
+    // this search method sucks, complexity = 0(n)
     search(e) {
         let currentNode = this.head;
         if (currentNode == null) {
